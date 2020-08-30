@@ -1,0 +1,9 @@
+MOVIE script fading stuff 
+
+1) locate 2 scripts to fade between, call them S1 and S2
+2) run "get_maps -f image < S2" to extract the initial image
+   of S2
+3) run "fade [options] -b image -z > middle" to generate a fade script
+   in "middle" using the initial image of S2, above
+4) in the play_data script, put S1,middle,S2
+5) fade2, which does it all automatically, is broken, sorry

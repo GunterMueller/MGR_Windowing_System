@@ -1,0 +1,26 @@
+#                        Copyright (c) 1987,1991  Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+#	$Header: README,v 4.1 88/06/21 14:03:31 bianchi Exp $
+#	$Source: /tmp/mgrsrc/demo/RCS/README,v $
+
+these are the demo applications for mgr.  They are places in the following 
+subdirectories:
+
+../lib	the mgr interface library routines
+
+icon	programs which manipulate icons
+
+sh	applications that are shell scripts
+
+tests	programs to test mgr features
+
+msg	message passing application demo
+
+misc	everything else
+
+movie  support tools for $HOME MOVIE (see winter 1991 usenix proceedings)

@@ -1,0 +1,50 @@
+.TH audiocntl 1L "April 30, 1990"
+.SH NAME
+Audiocntl \- Change the state of the Sun audio device.
+.SH SYNOPSIS
+.I audiocntl
+[ status ]
+[ volume <value> ]
+[ record <value> ]
+[ monitor <value> ]
+[ internal ]
+[ external ]
+.SH DESCRIPTION
+.I audiocntl
+Reports and changes the state of the Sun Sparcstation audio device.
+The command line options are performed sequentially, from left to right.
+.LP
+.TP
+status
+displays the current status of the audio device.
+.TP
+volume <value>
+sets the playback volume, where 0 <= value <= 255.
+.TP
+record <value>
+sets the record level, where 0 <= value <= 255.
+.TP
+monitor <value>
+sets the gain of input to output feedback, for monitoring
+audio input on the audio output.  value ranges form 0 to 255.
+.TP
+internal
+selects the tinny internal speaker.
+.TP
+external
+selects the headphone jack.
+.SH EXAMPLES
+.TP
+audiocntl volume 50 external status
+Sets the playback volume to 50/255, turns on the external audio jack,
+then prints the resulting audio state.
+.SH FILES
+.TP
+/dev/audioctl
+The audio control device
+.SH BUGS
+.TP
+*
+Audiocntl doesn't work on operating system releases prior to 4.1.
+.SH AUTHOR
+Stephen A. Uhler

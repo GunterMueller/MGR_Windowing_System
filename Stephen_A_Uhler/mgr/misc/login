@@ -1,0 +1,55 @@
+#!/bin/csh
+#	sample .login file (csh) for MGR (sau)
+
+set noglob
+stty new dec erase  crt ctlecho
+setenv TMPDIR /tmp/
+setenv HOST `hostname`
+setenv EDITOR vi
+setenv PAGER more
+setenv PRINTER lj
+setenv EXINIT "set shiftwidth=3 tabstop=3 report=0"
+setenv MANPATH ".:$HOME/man:/usr/mgr/man:/usr/local/man:/usr/man"
+set prompt="$HOST% "
+
+#	Do special processing based on the terminal type.
+#  Some versions of rlogin leave $term unset
+
+switch(X$term)
+
+# These names are synonyms for unkown, prompt the user for the real type
+
+case Xsu:
+case Xdialup:
+case Xnet*:
+case Xswitch:
+case Xunknown:
+	eval `tset -s -n -Q -m :?wy`
+	breaksw
+
+#	The sun console
+
+case Xsun:
+	echo "[p"
+	setenv MORE "-cs"
+	breaksw
+
+#	remote login from an MGR window
+
+case Xmgr:
+	eval `set_termcap`
+	setname $HOST				# set the window name for ify
+	setenv MORE "-cs"
+	breaksw
+
+#	remote login from an MGR window.  Automatically start up a command
+#	This is triggered by: TERM=<command>.mgr; rlogin wherever
+
+case X*.mgr:
+	setenv TERM mgr
+	eval `set_termcap`
+	setenv MORE "-cs"
+	exec `basename $term .mgr`
+	breaksw
+endsw
+unset noglob

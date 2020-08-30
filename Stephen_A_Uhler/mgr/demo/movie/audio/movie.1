@@ -1,0 +1,40 @@
+.TH movie 1L "April 30, 1990"
+.SH NAME
+movie \- play an $HOME MOVIE
+.SH SYNOPSIS
+movie [script]
+.SH DESCRIPTION
+.I Movie
+plays back an MGR-A-Matic movie from a Sparcstation console.
+.I Script
+is the name of the file containing one or more lines of the form:
+.br
+	name=script1[.Z],script2[.Z]...scriptn[.Z]
+.br
+Where 
+.I name
+(1 to 7 characters) is the name that appears in the 
+.I program
+window of the
+.B vcr
+interface.
+.I Scriptn
+is the name of the MGR-A-Matic video script.  The 
+.I .Z
+suffix indicates that it is compressed.
+All of the comma separated scripts are concatenated together to form a single movie.
+If corresponding
+.I script .au
+files are available, they will be played though the Sparcstation speaker as well.
+If no script is provided, the file 'script' in the current directory is used
+.SH BUGS
+Lots.
+.SH SEE ALSO
+play_data(1L)
+make_movie(1L)
+mgr(1L)
+play_audio(1L)
+record(1L)
+vcr(1L)
+.SH AUTHOR
+Stephen A. Uhler

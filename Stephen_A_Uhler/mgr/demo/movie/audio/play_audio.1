@@ -1,0 +1,71 @@
+.TH play_audio 1L "April 30, 1990"
+.SH NAME
+mgrtalk \- play the audio portion of a $HOME MOVIE
+.SH SYNOPSIS
+play_audio
+[-j]
+[-t<bytes>]
+.SH DESCRIPTION
+Play_audio plays the audio portion of a $HOME movie on a Sun Sparcstation.
+It reads commands from its standard input, normally piped from
+.I play_data
+and plays the appropriate sounds scripts through the internal speaker.
+play_audio is normally invoked by the
+.I movie(1L)
+command.
+The commands understood by
+.B mgrtalk
+are:
+.TP
+<	Turn down the volume by 5%.
+.TP
+>	Turn up the volume by 5%
+.TP
+B n	Start playing the current sound file at byte
+.I n .
+.TP
+j	Select the internal speaker
+.TP
+J	Select the External speaker jack
+.TP
+Q	Quit
+.TP
+S <file>	Start playing from
+.I file .au
+.TP
+s	Play at speed 
+.I n
+where 
+.I n
+is one of:50,100,200 for slow, normal, and fast.
+.LP
+The command line flag
+.I "-t<bytes>"
+specifies the maximum number of bytes placed in the speakers output queue.
+The default is 1500.  If the sound on playback breaks up due to long network delays
+the number should be increased, at the expense of a slight loss of sound synchronization.
+The flag
+.I -j
+selects the external speaker jack.
+.SH FILES
+/dev/audio
+.SH BUGS
+.TP 
+*
+There are two incompatable versions of this program, one for
+OS release 4.0.x, the other for release 4.1.  This one only works
+on os 4.1 or greater.
+.TP 
+*
+The algorithms for speeding up and slowing down the sound are poor.
+.TP 
+*
+The use of
+.I -j
+on the command line is inconsistent.
+.SH SEE ALSO
+audiocntl(1L)
+movie(1L)
+play_data(1L)
+.SH AUTHOR
+Stephen A. Uhler

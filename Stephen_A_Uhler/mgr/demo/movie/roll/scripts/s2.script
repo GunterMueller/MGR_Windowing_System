@@ -1,0 +1,57 @@
+#!/bin/sh
+#	script for generating superbook credits
+foo=/tmp/foo
+ROLL=../roll
+COMMON=-i10
+${ROLL} ${COMMON} -s1 -E 200 -z "cat >> $foo" << XXX
+b-28	c		0		THE END
+XXX
+${ROLL} ${COMMON} -s3 -t 250 -b 800  -z "cat >> $foo"<< XXX
+margin 180 180
+b-22	l	0	Program:
+r-22	r	-20	Joel Remde
+b-22	l	50	Director:
+r-22	r	-20	Dennis Egan
+b-22	l	50	Script:
+r-22	r	-20	Carol Lochbaum
+b-22	l	50	Visual Effects:
+r-22	r	-20	Dan Ketchum
+b-22	l	50	Producer:
+r-22	r	-20	Stephen Uhler
+b-22	l	50	Music by:
+r-22	r	-20	PellScore
+b-22	l	50	Pellscore by:
+r-22	r	-20	Peter Langston
+b-22	l	50	Peter Langston by:
+r-22	r	-20	Mom
+b-22	l	50	Best Boy:
+r-22	r	-20	Tom Landauer
+b-20	l	100	Special assistance provided by:
+margin 0 0
+r-18	c	0	Mike Bianchi
+r-18	c	0	Steve Hawley
+r-18	c	0	Daniel Nachbar
+b-20	c	100	Window System Services provided by:
+r-20	c	0	MGR
+r-14	c	0	and the
+r-18	c	0	MGR-A-Matic Video System.
+r-14	c	0	-Written by -
+r-18	c	0	Stephen Uhler
+r-18	c	100	Credits by Roll-A-Credit
+XXX
+${ROLL} ${COMMON} -s1 -t 300 -b 800 -z "cat >> $foo" << XXX
+r-12	c	0	Text of the
+r-12	c	0	Handbook of Computer Interaction
+r-12	c	0	Provided for Demonstration only
+r-12	c	0	by
+r-12	c	0	Elsevier Publishers,
+r-12	c	0	Amsterdam
+XXX
+${ROLL} ${COMMON} -s1 -t 300 -b 800 -z "cat >> $foo" << XXX
+r-12	c	0	The printed version of this book
+r-12	c	0	is on display at CHI at the
+r-12	c	0	Elsevier booth.
+XXX
+${ROLL} ${COMMON} -s1 -t 300 -b 800 -E 100 -w 6 -z "cat >> $foo"<< XXX
+r-12	c	0	A Cog-Sci Video Production
+XXX

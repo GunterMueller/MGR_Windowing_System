@@ -1,0 +1,17 @@
+This directory contains the supporting tools needed to 
+make, edit and playback $HOME MOVIEs
+
+Makefile             make file
+README               This file
+audio/               Sparc audio tools
+demo/                Sample $HOME MOVIE script
+fade/                fade utility
+make_movie.sh        Shell script to invoke MGR in movie-making mode
+play_data/           video playback stuff
+play_movie.sh        Shell script to playt back a movie
+roll/                Roll-A-Credit utility
+vcr/                 $HOME MOVIE user interface
+
+The following tools are also neede:
+MGR:	for the VCR playback interface
+clock2: why not

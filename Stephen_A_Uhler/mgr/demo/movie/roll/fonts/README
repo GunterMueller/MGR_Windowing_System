@@ -1,0 +1,5 @@
+These are MGR bitmaps for the versatec (vfont) font files
+
+*.mgr		The bitmaps
+*.widths	The width tables
+[RIBS]	The consolodated width tables

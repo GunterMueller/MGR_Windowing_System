@@ -1,0 +1,18 @@
+This directory contains the ROLL program for
+generating credits and annotations for $HOME MOVIES onlr roll is
+built and installed by default
+
+Contents:
+ roll.1          roll program man page
+ roll.c          roll program source
+ croll.c         version of roll for color displays (not done yet)
+ 
+ assemble.c      utility for pasting separate bitmap images together
+ restore.c       generates a HOME MOVIE script out of a single image
+ save.c          captures the screen as a MGR bitmap (same as getscreen)
+ trim.c          crops bitmap images
+ 
+ scripts/        sample roll scripts
+ fonts/          fonts used by roll
+
+

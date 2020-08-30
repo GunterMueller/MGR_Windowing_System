@@ -1,0 +1,39 @@
+#                        Copyright (c) 1988 Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+#	$Header: README,v 4.2 88/06/30 12:44:50 bianchi Exp $
+#	$Source: /tmp/mgrsrc/doc/usrman/RCS/README,v $
+
+This directory contains the MGR programmers manual.
+
+The manual is made in two passes.  The first pass calculates the
+function index and category sections, then the second pass prints the
+document.
+
+You might need to edit doc.0 to change the definition of the fonts
+used for 'Ff' and 'Fn' to whatever you call your constant width roman
+and bold fonts.
+
+"make ver"	increments a version number to keep the copies straight
+"make print"	prints the manual on a photocomposer
+"make nroff"	prints the manual via nroff onto the stdout
+"make"		runs ver, index, and print
+
+INDEX				extracts the index from temp.index
+
+
+contents:
+doc.0a				troff macros
+doc.1a				introduction
+doc.2a				macros
+doc.3a				macros
+doc.4a				macros
+doc.5a				functions
+doc.6a				programming example
+doc.7a				function/macro listing by category (generated)
+doc.8a				function/macro index (generated)
+doc.9a				stuff for printing the table of contents

@@ -1,0 +1,148 @@
+.TH roll 1L "April 30, 1990"
+.SH NAME
+roll \- roll credits for an MGR-A-Matic movie.
+.SH SYNOPSIS
+roll
+[-E <line>]
+[-S <line>]
+[-b <line>]
+[-d <size>]
+[-g <gap>]
+[-l <margin>]
+[-m]
+[-r <margin>]
+[-s <speed>]
+[-t <line>]
+[-w <time>]
+[-z ]
+.SH DESCRIPTION
+.B Roll
+generates credits for MGR-A-Matic Movies.  Standard input consists of
+a script indicating the text to be used for the credits.
+Each line of the script file is one of the following three types.
+.TP 
+1)
+Starts with a '#', or is blank, and is ignored.
+.TP
+2)
+Has the form:
+\fBmargin <left> <right>\fP
+Where 
+.I left
+and
+.I right
+specify the left and right margin in pixels from the edge of the display.
+The 
+.I margin
+command may be repeated as often as needed.
+.TP
+3)
+Has the form:
+\fB<font>	<position>	<vertical_offset> <text>.\fP
+.I Font
+specifies the font and size to be used for the text.  The styles supported
+are one of [rib], for roman, bold, and italic.  The available sizes are
+[10,12,14,16,18,20,22,24,28].  The combination is specifies as in
+.I r-24
+for a 24 point roman font.
+.LP
+The second field
+.I position
+indicates the horizontal position of the text.  The letters
+.I "l, c"
+and
+.I r
+specify left justified, centered, and right justified respectively.
+Left and right justification is relative to the current
+.I margin setting.
+.LP
+The vertical offset field, normally zero (0), specifies the vertical
+offset from the previous line.  The value 100 represents double spacing, 
+-100 moves the text to the previous line.
+.LP
+Roll has many command line flags.  They are:
+.TP
+\-E <line>
+By default, The text rolls completely off the display.  With this option,
+credits stop rolling when the last text item has reached 
+.I line
+pixels from the top of the display.
+.TP
+\-S <line>
+The text starts at 
+.I line
+pixels from the bottom of the display.  The default is 0.
+.TP
+\-b|t|l|r <line>
+These flags set the text display window as a subset of the entire display.
+Units are in pixels from the
+.I bottom
+.I top
+.I left
+and
+.I right 
+respectively.
+.TP
+\-d <size>
+indicates the size of the drop shadows, in pixels.  The
+default is 2.
+.TP 
+\-g <size>
+sets the intra-glyph gap.
+it defaults to the drop shadow size.
+.TP 
+\-m
+specifies white letters with dark shadows.  The default is black letters with white
+shadows.
+.TP
+\-s <speed>
+Sets the scrolling speed, in terms of number of pixels scrolled per iteration. 
+The default is 5.  One is the slowest.
+.TP
+\-w  <seconds>
+Sets the time the final text display is to remaion before roll exits.
+.TP
+\-z 
+specifies that a $HOME MOVIE script of the commands will be generated on stdout.
+.SH EXAMPLES
+The following shell script demonstrates some of the features of roll:
+.RS
+.nf
+#!/bin/sh
+#	script for generating superbook titles
+roll -s1 -E 200 -z > foo << XXX
+b-28	c		0		SuperBook
+XXX
+roll -s2 -E 400 -z  >> foo << XXX
+r-22	c		0		A User Centered
+r-22	c		0		Document Browsing System
+XXX
+roll -s2 -E 700 -w 4 -z >> foo << XXX
+r-18	c		0		Copyright (c) 1990
+b-20	c		0		Bellcore
+XXX
+.fl
+.RE
+.SH BUGS
+.TP
+*
+Many of the command line flags should be specified as part of the
+input script.
+.TP
+*
+Greater control and flexibility of the text would be nice.
+.TP
+*
+Some of the font width tables are wrong.
+.SH FILES
+.TP
+*
+\&./fonts/[ribs]-[12][0-9].mgr	- for font data
+font data
+.SH SEE ALSO
+mgr(1L)
+play_data(1L)
+vcr(1L)
+record(1L)
+.SH AUTHOR
+S. A. Uhler

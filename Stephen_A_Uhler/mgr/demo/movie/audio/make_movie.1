@@ -1,0 +1,47 @@
+.TH make_movie 1L "April 30, 1990"
+.SH NAME
+make_movie \- Make an $HOME MOVIE
+.SH SYNOPSIS
+make_movie [script]   [<mgr options>]]
+.SH DESCRIPTION
+.I Make_movie
+is a sample shell script that runs MGR in movie making mode.
+.I Script
+is the name of the path prefix used to store
+the movie scripts.
+.I Make_movie
+should be run from the Sparcstation console. 
+Once in MGR, 
+the key sequence
+.I diamond-shift-s
+starts the movie scripting, and turns on the microphone.
+.I Diamond-s
+stops the scripting and turns off the microphone.
+Scripting may be started and stopped as many times as desired.  Each
+script is stored in two separate files called
+.I  <script>nnn.Z
+and
+.I <script>nnn.au
+where 
+.I <script>
+is provided on the command line (or /tmp/$USER. if script is omitted), 
+and
+.I nnn
+is a unique number.
+The scripts created by
+.I make_movie
+can be played back with the
+.I movie(1L)
+command.
+.SH BUGS
+Sometimes the first display image is delayed.  Jiggling the mouse a little just as
+scripting starts eliminates this problem.
+.SH SEE ALSO
+play_data(1L)
+movie(1L)
+mgr(1L)
+play_audio(1L)
+record(1L)
+vcr(1L)
+.SH AUTHOR
+Stephen A. Uhler

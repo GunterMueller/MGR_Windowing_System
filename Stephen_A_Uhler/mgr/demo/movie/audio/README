@@ -1,0 +1,24 @@
+Audio stuff for the sparc stations
+
+* This directory contains OS 4.1 release stuff
+
+* 4.0.3 contains old 4.0.3 stuff
+
+audiocntl	control the audio settings
+audiowatch	watch changes in the audio state
+extract		extract ranges from a sound file
+from_ether	dump audio-ether to stdout
+hist			historgram of sound file
+low_pro		stdin -> /dev/audio, iff audio is not busy
+mac			MGR audio interface, volume, output select
+mac2			MGR audio interface, output select only
+mix			Mix 2 audio channels
+radio			PLy radio free ether
+record		record filter for $HOME movie
+show_sound	MGR graphical sound displayer
+show_sounds	MGR graphical sound displayer
+slip			???
+talk			audio output thingy for sparc audio
+throttle		thottle stdin -> stdout at 8000 bps
+to_ether		stdin to ethernet
+toss			compress audio track

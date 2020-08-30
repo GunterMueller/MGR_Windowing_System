@@ -1,0 +1,20 @@
+#!/bin/sh
+#	script for generating MTX title screen
+roll -s1 -E 200 -z "cat >> foo" << XXX
+b-28	c		0		MTX
+XXX
+roll -s3 -E 400 -z "cat >> foo" << XXX
+r-22	c		0		A Shell that Permits Dynamic
+r-22	c		0		Rearrangement of
+r-22	c		0		Process Connections and Windows
+XXX
+roll -s3 -E 480 -z "cat >> foo" << XXX
+r-20	c		0		-by-
+XXX
+roll -s2 -E 600 -z "cat >> foo" << XXX
+r-28	c		0		Stephen A Uhler
+XXX
+roll -s2 -E 800 -w 4 -z "cat >> foo" << XXX
+r-18	c		0		Copyright (c) 1990
+b-20	c		0		Bellcore
+XXX

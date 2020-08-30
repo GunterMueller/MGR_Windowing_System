@@ -1,0 +1,93 @@
+'\"!
+'\"                        Copyright (c) 1988 Bellcore
+'\"                            All Rights Reserved
+'\"       Permission is granted to copy or use this program, EXCEPT that it
+'\"       may not be sold for profit, the copyright notice must be reproduced
+'\"       on copies, and credit should be given to Bellcore where it is due.
+'\"       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+'\"
+'\"	$Header: menu.1,v 4.1 88/06/21 13:51:43 bianchi Exp $
+'\"	$Source: /tmp/mgrsrc/doc/RCS/menu.1,v $
+.TH MENU 1 "Documented 6/6/86       Local"
+.UC 4
+.SH NAME
+menu \-
+create or select an mgr pop-up menu
+.SH SYNOPSIS
+.B menu
+[
+.B \-options
+]
+[
+menufile(s)
+]
+.br
+.SH DESCRIPTION
+.I Menu
+downloads or selects a pop-up menu for the mgr window manager for a Sun
+workstations.
+.SH OPTIONS
+.ti-4
+-sn selects the menu previously loaded into position n; that is,
+it binds the menu in position n to the middle mouse button.
+No downloading takes place.
+.sp
+.ti-3
+-s by itself allows downloading of a new menu, without it being selected.
+.sp
+.ti-4
+-ln causes loading of a new menu 
+into position n.  By default, n is 1.
+The loaded menu is also selected (unless -s was specified).
+.sp
+.tr ~
+.ti-4
+-n"Name of Menu"~~ specifies a name for the menu.  Alternatively,
+a name may be specified by one or more lines of the form 
+name=anything in the menu file.  By default, the name of the menu
+is taken to be the name of the input file converted to upper-case.
+The menu's name is displayed at the top of the menu.
+-n by itself suppresses the name altogether.
+.sp
+.ti-4
+-fn specifies that the font loaded into font postion n will
+used for the menu.  Default is 6.
+.sp
+.ti-4
+-d<char>~~ indicates that <char> will be used instead of the default,
+TAB,
+to delimit items from actions in the menu file.
+.sp
+The named input files (or standard input by default) should contain one
+item-action pair per line, delimited by by one or more
+delimiter characters (TABs by default). Items and actions are arbitrary
+character strings not containing the delimiter character.
+The items are displayed in the pop-up menu,
+and the user is allowed to select an item
+using the mouse and middle button.  The corresponding action string is
+then written to the standard input of the process running in the window.
+If an action ends with \\c, the newline character following the action is suppressed.
+.sp
+Optionally, the menu file may begin with
+a delim=<char> line to specify an alternate delimiter,
+followed by any number of name=anything lines
+to specify one or more lines of menu name, and a font=n line to select a 
+font.
+.BUGS
+The total number of characters in all actions and items may not exceed
+approximately 1000.
+.ne 15
+.SH EXAMPLES
+.nf
+menu <<!
+delim=:
+name=    FRUITS
+name=--------------
+apples:echo apples
+oranges:echo oranges
+pears:echo pears
+passion fruit:echo passion fruit
+three cherries:echo Jackpot!
+!
+.SH AUTHOR
+Paul A. Tukey (bellcore!paul)

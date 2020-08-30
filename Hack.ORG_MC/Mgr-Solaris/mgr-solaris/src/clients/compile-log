@@ -1,0 +1,325 @@
+cd ~/kod/mgr/mgr-src/src/clients/
+make -k 
+for i in portable icon misc bitblit Sun examples  ; do (cd $i; make all); done
+make[1]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable'
+for i in  hpmgr ico ify mgrload mgrplot mgrsketch mphoon pgs sh simple texmgr text2font; do (cd $i; make all); done
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/hpmgr'
+gcc  -o hpmgr hpmgr.o getpty.o /users/mc/mgr/lib/libmgr.a
+Undefined			first referenced
+ symbol  			    in file
+setregid                            getpty.o
+getdtablesize                       getpty.o
+index                               getpty.o
+setreuid                            getpty.o
+ld: fatal: Symbol referencing errors. No output written to hpmgr
+make[2]: *** [hpmgr] Error 1
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/hpmgr'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/ico'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c ico.c -o ico.o
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from ico.c:48:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+ico.c: In function `main':
+ico.c:263: warning: implicit declaration of function `srandom'
+ico.c:264: warning: implicit declaration of function `random'
+ico.c:171: warning: `fg' might be used uninitialized in this function
+ico.c:171: warning: `bg' might be used uninitialized in this function
+ico.c: In function `drawPoly':
+ico.c:411: warning: implicit declaration of function `bcopy'
+ico.c:446: warning: implicit declaration of function `bzero'
+make[2]: *** [ico.o] Error 1
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/ico'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/ify'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c ify.c -o ify.o
+ify.c:48: strings.h: No such file or directory
+make[2]: *** [ify.o] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c setname.c -o setname.o
+setname.c: In function `main':
+setname.c:50: warning: implicit declaration of function `gethostname'
+setname.c:134: warning: control reaches end of non-void function
+gcc -o setname setname.o /users/mc/mgr/lib/libmgr.a
+Undefined			first referenced
+ symbol  			    in file
+gethostname                         setname.o
+ld: fatal: Symbol referencing errors. No output written to setname
+make[2]: *** [setname] Error 1
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/ify'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrload'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c mgrload.c -o mgrload.o
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrload.c:13:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [mgrload.o] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c getload.c -o getload.o
+sunos.c: In function `getload':
+In file included from getload.c:11:
+sunos.c:9: warning: unused variable `load'
+sunos.c:8: warning: unused variable `s'
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrload'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrplot'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c subs.c -o subs.o
+subs.c: In function `openpl':
+subs.c:38: warning: implicit declaration of function `atoi'
+subs.c: In function `erase':
+subs.c:66: warning: implicit declaration of function `getpass'
+gcc -o mgrplot mgrplot.o subs.o /users/mc/mgr/lib/libmgr.a
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrplot'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrsketch'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c mgrsketch.c -o mgrsketch.o
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrsketch.c:12:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [mgrsketch.o] Error 1
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mgrsketch'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mphoon'
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c smallmoon.c -o smallmoon.o
+smallmoon.c:2: warning: `rcsid' defined but not used
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c mphoon.c -o mphoon.o
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c phase.c -o phase.o
+phase.c:2: warning: `rcsid' defined but not used
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c atan2.c -o atan2.o
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c i386.c -o i386.o
+gcc  -L/users/mc/mgr/lib -lmgr -lm     -o .o
+Undefined			first referenced
+ symbol  			    in file
+main                                /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/crt1.o
+ld: fatal: Symbol referencing errors. No output written to .o
+make[2]: *** [.o] Error 1
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c moon.c -o moon.o
+moon.c:2: warning: `rcsid' defined but not used
+gcc -DVIAFILE  -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c bigmoon.c -o bigmoon.o
+bigmoon.c:2: warning: `rcsid' defined but not used
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/mphoon'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/pgs'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c pgs.c -o pgs.o
+pgs.c: In function `main':
+pgs.c:211: warning: passing arg 2 of `signal' from incompatible pointer type
+pgs.c:212: warning: passing arg 2 of `signal' from incompatible pointer type
+pgs.c: In function `fixfilename':
+pgs.c:413: warning: implicit declaration of function `getwd'
+gcc -o pgs pgs.o /users/mc/mgr/lib/libmgr.a
+Undefined			first referenced
+ symbol  			    in file
+getwd                               pgs.o
+index                               pgs.o
+rindex                              pgs.o
+ld: fatal: Symbol referencing errors. No output written to pgs
+make[2]: *** [pgs] Error 1
+make[2]: Target `all' not remade because of errors.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/pgs'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/sh'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/sh'
+make[2]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/portable/simple'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o browse browse.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from browse.c:4:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [browse] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o clock clock.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from clock.c:10:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [clock] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o clock2 clock2.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from clock2.c:12:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [clock2] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o cut cut.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from cut.c:16:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [cut] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mclock mclock.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mclock.c:11:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [mclock] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o window_print window_print.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from window_print.c:13:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+window_print.c: In function `main':
+window_print.c:65: warning: implicit declaration of function `gethostname'
+make[2]: *** [window_print] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrbiff mgrbiff.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrbiff.c:9:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [mgrbiff] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o iconmail iconmail.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from iconmail.c:17:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [iconmail] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o iconmsgs iconmsgs.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from iconmsgs.c:17:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+make[2]: *** [iconmsgs] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrview mgrview.c /users/mc/mgr/lib/libmgr.a
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun   squeeze.c   -o squeeze
+squeeze.c: In function `main':
+squeeze.c:105: warning: control reaches end of non-void function
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun   unsqueeze.c   -o unsqueeze
+unsqueeze.c:3: warning: return-type defaults to `int'
+unsqueeze.c: In function `main':
+unsqueeze.c:5: warning: `oc' might be used uninitialized in this function
+unsqueeze.c:31: warning: control reaches end of non-void function
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrmsgs mgrmsgs.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrmsgs.c:17:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+mgrmsgs.c: In function `main':
+mgrmsgs.c:88: warning: implicit declaration of function `strncmp'
+mgrmsgs.c:99: warning: implicit declaration of function `usage'
+mgrmsgs.c:109: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmsgs.c:110: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmsgs.c:111: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmsgs.c:116: warning: implicit declaration of function `get_bounds'
+mgrmsgs.c:116: warning: implicit declaration of function `get_rc'
+mgrmsgs.c:117: warning: implicit declaration of function `get_msg'
+mgrmsgs.c:126: warning: implicit declaration of function `alarm'
+mgrmsgs.c: At top level:
+mgrmsgs.c:197: warning: return-type defaults to `int'
+mgrmsgs.c: In function `get_msg':
+mgrmsgs.c:206: warning: control reaches end of non-void function
+mgrmsgs.c: At top level:
+mgrmsgs.c:209: warning: return-type defaults to `int'
+mgrmsgs.c:216: warning: return-type defaults to `int'
+mgrmsgs.c: In function `update':
+mgrmsgs.c:226: warning: control reaches end of non-void function
+mgrmsgs.c: At top level:
+mgrmsgs.c:229: warning: return-type defaults to `int'
+make[2]: *** [mgrmsgs] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrmail mgrmail.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrmail.c:18:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+mgrmail.c:46: warning: missing braces around initializer for `menu[0]'
+mgrmail.c:63: warning: return-type defaults to `int'
+mgrmail.c: In function `main':
+mgrmail.c:89: warning: implicit declaration of function `strncmp'
+mgrmail.c:94: warning: implicit declaration of function `atoi'
+mgrmail.c:104: warning: implicit declaration of function `usage'
+mgrmail.c:116: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmail.c:117: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmail.c:118: warning: passing arg 2 of `signal' from incompatible pointer type
+mgrmail.c:144: warning: implicit declaration of function `do_mail'
+mgrmail.c:147: warning: implicit declaration of function `sleep'
+mgrmail.c: At top level:
+mgrmail.c:164: warning: return-type defaults to `int'
+mgrmail.c: In function `do_mail':
+mgrmail.c:170: warning: implicit declaration of function `alarm'
+mgrmail.c:184: warning: implicit declaration of function `system'
+mgrmail.c:193: warning: control reaches end of non-void function
+mgrmail.c: In function `update':
+mgrmail.c:218: warning: control reaches end of non-void function
+mgrmail.c: At top level:
+mgrmail.c:223: warning: return-type defaults to `int'
+mgrmail.c:230: warning: return-type defaults to `int'
+mgrmail.c:11: warning: `RCSid_' defined but not used
+make[2]: *** [mgrmail] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrshowfont mgrshowfont.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrshowfont.c:8:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+mgrshowfont.c: In function `read_font':
+mgrshowfont.c:81: warning: unused variable `dummy'
+mgrshowfont.c:80: warning: unused variable `name'
+make[2]: *** [mgrshowfont] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o startup startup.c /users/mc/mgr/lib/libmgr.a
+startup.c: In function `main':
+startup.c:32: warning: implicit declaration of function `strncpy'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o close close.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from close.c:16:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+close.c: In function `main':
+close.c:58: warning: implicit declaration of function `srand'
+close.c:58: warning: implicit declaration of function `getpid'
+close.c:64: warning: passing arg 2 of `signal' from incompatible pointer type
+close.c:65: warning: passing arg 2 of `signal' from incompatible pointer type
+close.c:66: warning: passing arg 2 of `signal' from incompatible pointer type
+close.c:71: warning: implicit declaration of function `usage'
+close.c:79: warning: implicit declaration of function `m_setid'
+close.c:84: warning: implicit declaration of function `gethostname'
+close.c:91: warning: implicit declaration of function `atoi'
+close.c:94: warning: implicit declaration of function `setupwindow'
+close.c:104: warning: implicit declaration of function `goto_spot'
+close.c:117: warning: implicit declaration of function `alarm'
+close.c:131: warning: implicit declaration of function `sleep'
+close.c:131: warning: implicit declaration of function `rand'
+Killed
+make[1]: Entering directory `/home/u10/mc/kod/mgr/mgr-src/src/clients/icon'
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -DSCREEN_DEV=\"/dev/bwtwo0\" -DOLDLIBMGR -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun  -c zoom.c -o zoom.o
+close.c: At top level:
+close.c:149: warning: return-type defaults to `int'
+close.c:149: warning: `clean' was declared `extern' and later `static'
+close.c:160: warning: `goto_spot' was declared implicitly `extern' and later `static'
+close.c: In function `goto_spot':
+close.c:188: warning: implicit declaration of function `in_win'
+close.c: At top level:
+close.c:214: warning: `in_win' was declared implicitly `extern' and later `static'
+close.c:229: warning: return-type defaults to `int'
+close.c:229: warning: `sigalrm' was declared `extern' and later `static'
+close.c: In function `sigalrm':
+close.c:231: warning: control reaches end of non-void function
+close.c: At top level:
+close.c:237: warning: `m_setid' was declared implicitly `extern' and later `static'
+close.c:252: warning: return-type defaults to `int'
+close.c:252: warning: `usage' was declared implicitly `extern' and later `static'
+close.c:265: warning: return-type defaults to `int'
+close.c:265: warning: `setupwindow' was declared implicitly `extern' and later `static'
+close.c: In function `setupwindow':
+close.c:280: warning: control reaches end of non-void function
+close.c: At top level:
+close.c:11: warning: `RCSid_' defined but not used
+make[2]: *** [close] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o omgrmail omgrmail.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from zoom.c:15:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from omgrmail.c:18:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+omgrmail.c:42: warning: missing braces around initializer for `menu[0]'
+omgrmail.c:59: warning: return-type defaults to `int'
+omgrmail.c: In function `main':
+omgrmail.c:86: warning: implicit declaration of function `strncmp'
+omgrmail.c:91: warning: implicit declaration of function `atoi'
+omgrmail.c:101: warning: implicit declaration of function `usage'
+omgrmail.c:113: warning: passing arg 2 of `signal' from incompatible pointer type
+omgrmail.c:114: warning: passing arg 2 of `signal' from incompatible pointer type
+omgrmail.c:115: warning: passing arg 2 of `signal' from incompatible pointer type
+omgrmail.c:143: warning: implicit declaration of function `do_mail'
+omgrmail.c: At top level:
+omgrmail.c:158: warning: return-type defaults to `int'
+omgrmail.c: In function `do_mail':
+omgrmail.c:164: warning: implicit declaration of function `alarm'
+omgrmail.c:172: warning: implicit declaration of function `system'
+omgrmail.c:174: warning: implicit declaration of function `sleep'
+omgrmail.c:188: warning: control reaches end of non-void function
+omgrmail.c: In function `update':
+omgrmail.c:213: warning: control reaches end of non-void function
+omgrmail.c: At top level:
+omgrmail.c:218: warning: return-type defaults to `int'
+omgrmail.c:225: warning: return-type defaults to `int'
+omgrmail.c:11: warning: `RCSid_' defined but not used
+make[2]: *** [omgrmail] Error 1
+gcc -Wall -O2 -I/users/mc/mgr/include -I/users/mc/mgr/include/sun -Dsun -o mgrsclock mgrsclock.c /users/mc/mgr/lib/libmgr.a
+In file included from /usr/gnu/lib/gcc-lib/sparc-sun-solaris2.4/2.7.2/include/signal.h:68,
+                 from mgrsclock.c:6:
+/usr/include/sys/procset.h:42: parse error before `0xfff'
+mgrsclock.c: In function `main':
+mgrsclock.c:83: warning: int format, long int arg (arg 3)
+mgrsclock.c:83: warning: int format, long int arg (arg 4)
+
+Compilation kill at Sat Sep  7 12:00:35

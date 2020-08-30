@@ -1,0 +1,37 @@
+#!/bin/sh
+#                        Copyright (c) 1987 Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+#	$Header: cursor,v 1.1 88/08/12 07:44:06 sau Exp $
+#	$Source: /tmp/mgrsrc/demo/sh/RCS/cursor,v $
+
+#	set cursor style
+SET=h
+ESC=""
+ECHO=/bin/echo
+
+if /bin/test $TERM != mgr
+then
+   echo "$0 only works on mgr terminals"
+   exit 1
+fi
+
+case $1 in
+	n*)		$ECHO -n $ESC$SET;;
+	l*)		$ECHO -n ${ESC}1$SET;;
+	b*)		$ECHO -n ${ESC}3$SET;;
+	u*)			$ECHO -n ${ESC}4$SET;;
+	r*)			$ECHO -n ${ESC}2$SET;;
+	i*)			$ECHO -n ${ESC}5$SET;;
+	*)				$ECHO "Specify one of:"
+					$ECHO " n(ormal)"
+					$ECHO " b(ox)"
+					$ECHO " u(nderline)"
+					$ECHO " l(eft)"
+					$ECHO " r(ight)"
+					$ECHO " i(nvisible)";;
+esac

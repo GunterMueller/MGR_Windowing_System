@@ -1,0 +1,40 @@
+'\"!
+'\"                        Copyright (c) 1988 Bellcore
+'\"                            All Rights Reserved
+'\"       Permission is granted to copy or use this program, EXCEPT that it
+'\"       may not be sold for profit, the copyright notice must be reproduced
+'\"       on copies, and credit should be given to Bellcore where it is due.
+'\"       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+'\"
+'\"	$Header: browse.1,v 4.1 88/06/21 13:51:20 bianchi Exp $
+'\"	$Source: /tmp/mgrsrc/doc/RCS/browse.1,v $
+.TH browse 1L "June 30, 1986"
+.SH NAME
+browse \- An icon browser for MGR
+.SH SYNOPSIS
+.B browse
+\fBfilename\fP...
+.SH DESCRIPTION
+.B Browse
+displays the icon files specified on the command line in the current window.
+If all of the icons specified won't fit in the window, the pop-up menu accessed from the
+middle mouse button permits paging back and forth among the icons.
+.LP
+The Right or
+.I pointing
+button of the mouse, when clicked over an 
+.I icon,
+highlights the icon and prints its filename.
+.SH BUGS
+.TP 
+*
+The icon files are read from the same host
+.I MGR
+is executing on, not the host 
+.I browse is running on.
+.SH SEE ALSO
+mgr(1L)
+bitmap(5L)
+zoom(1L)
+.SH AUTHOR
+S. A. Uhler

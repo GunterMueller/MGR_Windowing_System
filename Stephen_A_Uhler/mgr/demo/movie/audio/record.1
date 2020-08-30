@@ -1,0 +1,31 @@
+.TH record 1L "April 30, 1990"
+.SH NAME
+record \- Record sound along with an MGR-A-Matic movie.
+.SH SYNOPSIS
+mgr -z "record [<file_prefix>]"
+.SH DESCRIPTION
+Record captures (and compresses) the output from MGR running in scripting mode
+($HOME MOVIE)
+and simultaneously records an audio track.
+.SH FILES
+.TP
+<file_prefix>.<pid>.Z
+is the name of the video track (pid is the process id of record).
+.TP
+<file_prefix>.<pid>.au
+is the name of the audio track (pid is the process id of record).
+.SH BUGS
+.TP
+*
+There are two incompatable versions of this program, one for OS release
+4.0.x, the other for 4.1.
+.TP
+*
+Exact synchronization between the audio and video files is not guaranteed.
+.SH SEE ALSO
+movie(1L)
+make_movie(1L)
+mgr(1L)
+play_audio(1L)
+.SH AUTHOR
+Stephen A. Uhler

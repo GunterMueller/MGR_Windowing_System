@@ -1,0 +1,31 @@
+'\"!
+.TH set_console 1L "January 4, 1988"
+.SH NAME
+set_console \- redirect console messages to a
+.I MGR
+window.
+.SH SYNOPSIS
+.B set_console
+.SH DESCRIPTION
+.B Set_console ,
+when run in a
+.I MGR
+window,
+redirects console messages to that window.
+.SH SEE ALSO
+mgr(1L)
+.SH BUGS
+.IP *
+Redirecting console messages raises havoc if the keyboard is not
+in direct mode.  
+Set_console prints a warning message and fails if the keyboard is not
+in direct mode.
+.IP *
+Console messages automatically get reset to the console
+when 
+.I MGR
+is suspended.
+Set_console should be reissued after resuming a suspended
+.I MGR .
+.SH AUTHOR
+S. A. Uhler

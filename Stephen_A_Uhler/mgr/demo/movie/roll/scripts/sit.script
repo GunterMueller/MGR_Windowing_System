@@ -1,0 +1,16 @@
+#!/bin/sh
+#	script for generating fixed annotations
+roll -E 150 << XXX
+b-28	c		0		Please Stay Put
+XXX
+roll -E 450 << XXX
+margin 200 200
+r-20	l		0		Over here
+XXX
+roll -E 750 << XXX
+margin 200 200
+r-20	r		0		Over there
+XXX
+roll -E 850 -w 10 << XXX
+r-20	c		0		bottom
+XXX

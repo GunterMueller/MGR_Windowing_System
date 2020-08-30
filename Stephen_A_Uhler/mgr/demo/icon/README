@@ -1,0 +1,15 @@
+#                        Copyright (c) 1987 Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+#	$Header: README,v 4.1 88/06/21 13:15:13 bianchi Exp $
+#	$Source: /tmp/mgrsrc/demo/icon/RCS/README,v $
+
+Notice:
+
+zoom, which uses the same bit-blit routines as MGR, probably won't work
+on anything but sun's.  This is due to kludgy code in bitmap.c which the
+SUN c-compilers do OK on, but most others choke.

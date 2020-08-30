@@ -1,0 +1,15 @@
+#	sample .mailrc file for Mail status window (sau)
+
+set ask askcc dot crt=22 screen=22 keep onehop sendmail=Sendmail
+ignore via apparently-to From Date status Received Message-Id id
+
+#	sample Sendmail script
+
+
+#!/bin/sh
+#	run sendmail in debug mode, so we can log outgoing mail (sau)
+echo "sending mail at `date '+%T (%D)'`" >> $HOME/.sm
+echo "===> `date '+%D %T'`" >> $HOME/sent_mail
+tee -a $HOME/sent_mail | \
+		/usr/lib/sendmail -v $*  | egrep -uv '^[23]|^>' >> $HOME/.sm
+echo "----------" >> $HOME/.sm

@@ -1,0 +1,11 @@
+#                        Copyright (c) 1988 Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+#	$Header: README,v 1.1 88/07/07 10:11:51 sau Exp $
+#	$Source: /tmp/mgrsrc/doc/usrman/croff/RCS/README,v $
+
+troff c-source pre-processor   (S. A. Uhler)

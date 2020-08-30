@@ -1,0 +1,37 @@
+#	my .mgrc file (sau)
+#  Remove all of the comments before using
+
+# re-establish the console after resumeing MGR
+
+resumecmd	set_console 2> /dev/ttyp6 
+
+# specify heirarchical menu behaviour
+slide 150   8
+page  8  25
+
+#	MGR uses /dev/ttyp6 first (if avaliable)
+
+window 789	4  	354	88 1
+	start set_console\r
+
+# A little magic in .mailrc makes this work (see .mailrc)
+window 29       806     491     90  1
+   init \e23,0M-\eiMail delivery status\en-\e2,9t
+   start tail -f $HOME/.sm\r
+
+window 110	2	366	90
+	start stat -f1 -20 d1 -20 d2 -5 r\r
+window 3	3	90	90
+	start nice clock2\r
+window 636	9  	96	58
+	start mac -s\r
+window 480	8  	74	74
+	start iconmail -M/usr/sau/bin/Mail -s\r
+window 558	8  	74	74
+	start iconmsgs -s\r
+window 739	11  	45	45 1
+	start cut -s\r
+window 660   865     470     30  11
+   start spot\r
+window 172      164     970     610 11
+done

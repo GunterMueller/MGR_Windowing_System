@@ -1,0 +1,96 @@
+'\"!
+'\"
+'\"                        Copyright (c) 1988,1990 Bellcore
+'\"                            All Rights Reserved
+'\"       Permission is granted to copy or use this program, EXCEPT that it
+'\"       may not be sold for profit, the copyright notice must be reproduced
+'\"       on copies, and credit should be given to Bellcore where it is due.
+'\"       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+'\"
+'\"	$Header: bitmap.5,v 4.2 88/07/18 08:07:32 sau Exp $
+'\"	$Source: /tmp/mgrsrc/doc/RCS/bitmap.5,v $
+.TH bitmap 5L "April 30, 1986"
+.SH NAME
+Bitmap \- Bitmap header format for
+.I mgr
+bitmaps.
+.SH SYNOPSIS
+#include "dump.h"
+.SH DESCRIPTION
+There are two styles of bitmaps recognized by 
+.B MGR ,
+The old machine dependent format, and the new portable format.
+.LP
+Old bitmap files are prepended with a 6 byte ascii header which contains:
+1) a two byte magic number, 2) a 2 byte bitmap width, and 3) a two byte
+bitmap height. 
+The bitmap data follows the header in raster scan order,
+with each row padded out to a 16 bit boundary.
+.LP
+The new, portable bitmap format consists of an 8 byte ascii header containing:
+1) a two byte magic number, 2) a 2 byte bitmap width, 3) a two byte bitmap
+height, a single byte bitmap depth, and 1 reserved byte.
+The bitmap data follows the header in raster scan order, with each row 
+padded to a byte boundary.
+.LP
+For different types of displays, MGR represents bitmaps
+internally with each row padded to 8, 16, or 32 bit boundaries,
+which ever makes the most sense for the particular hardware.
+The internal format in use by MGR is avaliable to application programs
+via a GET_INFO call.
+MGR will accept any of the above row alignments, differentiated by the
+magic number in the bitmap header.
+However, if the external format matches the internal one, bitmaps may be
+processed more efficiently by the server.
+.LP
+The following macros, defined in
+.I dump.h
+may be useful for dealing with bitmap headers:
+.TP
+B_HSIZE
+The bitmap header size in bytes.
+.TP
+B_GETHDR(header,width,height)
+extracts the
+.I width
+and
+.I 
+height
+from the B_HSIZE buffer
+.I header
+.TP
+B_PUTHDR(header,width,height)
+produces a bitmap header for a bitmap
+.I width
+bits wide and
+.I height
+bits high.
+.TP
+B_ISHDR(header)
+returns true if
+.I header
+is a valid bitmap header
+.TP
+B_SIZE(width,height)
+returns the size in bytes (not including the header)
+of a bitmap
+.I width
+bits wide and
+.I height
+bits high.
+.TP
+B_MAGIC
+is a pointer to a character string whose first 2 bytes
+are the bitmap header magic number.
+.SH BUGS
+.TP 
+*
+The existence of two different bitmap formats is unfortunate.
+The old format should go away when the programs that use it are
+rewritten.
+.TP
+*
+The file "dump.h" gives a more accurate description of multitude of 
+bitmap formats.
+.SH SEE ALSO
+mgr(1L)

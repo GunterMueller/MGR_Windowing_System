@@ -1,0 +1,6 @@
+Tue Nov  5 19:12:02 1996  MC  <mc@signum.se>
+
+	* sun.c: Compiled sun.c with hand tuned -DCG6. Changed in sun.h
+	because there was a collision in the prototype for ioctl() between
+	it and unistd.h necessary for sysconf().
+

@@ -1,0 +1,48 @@
+'\"!
+'\"                        Copyright (c) 1988 Bellcore
+'\"                            All Rights Reserved
+'\"       Permission is granted to copy or use this program, EXCEPT that it
+'\"       may not be sold for profit, the copyright notice must be reproduced
+'\"       on copies, and credit should be given to Bellcore where it is due.
+'\"       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+'\"
+'\"	$Header: font.5,v 4.1 88/06/21 13:51:34 bianchi Exp $
+'\"	$Source: /tmp/mgrsrc/doc/RCS/font.5,v $
+.TH font 5L "April 30, 1986"
+.SH NAME
+Font \- font file format for 
+.I mgr
+bitmaps.
+.SH SYNOPSIS
+#include "font.h"
+.SH DESCRIPTION
+.B MGR
+font files consist of a font header followed by the bitmap data for each character.
+The header format is:
+.RS
+.nf
+
+struct font_header {
+	unsigned char type;		/* font type (magic number) '^v' */
+	unsigned char wide;		/* character width (pixels) */
+	unsigned char high;		/* char height (pixels) */
+	unsigned char baseline;	/* pixels from bottom of glyph */
+	unsigned char count;	/* number of chars in font */
+	char start;			/* starting char in font */
+   };
+
+.fi
+.RE
+All of the characters in the font are are stored in a single bitmap,
+.I wide
+x
+.I count
+pixels wide,
+and
+.I high
+pixels high.
+.SH BUGS
+Only fixes width fonts are currently supported.
+.SH SEE ALSO
+mgr(1L)
+bitmap(5L)

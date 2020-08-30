@@ -1,0 +1,9 @@
+px|mgr|SAU winow manager teminal emulator:\
+	:am:li#24:co#80:bs:cl=^L:ce=\Ec:cd=\EC:\
+	:cm=\E%r%d,%dM:cs=\E%d,%dt:\
+	:al=\Ea:dl=\Ed:ta=^I:\
+	:AL=\E%da:DL=\E%dd: \
+	:ic=\EA:dc=\EE:\
+	:up=\Eu:do=\Ef:nd=\Er:\
+	:so=\Ei:se=\En:vs=\EV:ve=\Ev:\
+	:ku=\E[A:kd=\E[B:kr=\E[C:kl=\E[D:

@@ -1,0 +1,8 @@
+mgr|mgr-24|Bellcore MGR (non X) window system terminal emulation,
+	am, cols#80, lines#24, cr=\r, csr=\E%p1%d\,%p2%dt, clear=\f,
+	el=\Ec, ed=\EC, cup=\E%p2%d\,%p1%dM, cud1=\Ef, cub1=\b, cnorm=\Eh,
+	cuf1=\Er, cuu1=\Eu, cvvis=\E0h, civis=\E9h, dch1=\EE, dl1=\Ed,
+	rmam=\E5S, smam=\E5s, bold=\E2n, rev=\E1n, sgr0=\E0n,
+	smso=\E1n, rmso=\E0n, smul=\E4n, rmul=\E0n, hu=\E1;2u, hd=\E1;2f, 
+	ich1=\EA, il1=\Ea, kbs=\b, kcud1=\n, kcub1=\b,
+	nel=\r\n, dl=\E%p1%dd, il=\E%p1%da, ind=\n, ht=\t, bel=^G, 

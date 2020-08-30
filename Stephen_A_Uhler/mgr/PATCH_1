@@ -1,0 +1,12 @@
+Bugs found in the distribution
+1) MGR crashes on startup on SUNOS-4.0
+	- fixed src/blit/bitmap.c
+2) src/kbd.c uses wrong include file for SUNOS-4.0
+	- fixed include
+	- fixed missing #else for no -DKBD option
+3) user manual doesn't make 
+	- fixed doc/usrman/Makefile
+4) Wrong heading on font(5) man page
+	- fixed doc/font.5
+5) The files misc/mgrc and misc/login are missing
+	- they've been added.

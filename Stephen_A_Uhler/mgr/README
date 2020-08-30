@@ -1,0 +1,21 @@
+=> This is the Bellcore Internal $HOME MOVIE release of MGR.
+	I expect the public
+	release to be virtually the same, except the Makefiles still need more work,
+	and the installation instructions need some more detail
+
+=> The significant changes over the previous release are listed in PATCH_3.
+
+=> The easiest way to install MGR is to say (as root):
+		make INSROOT=/usr/mgr TARGET=portmgr FLAG=-O install
+	This makes a monochrome MGR in /usr/mgr, and all of the utilities.
+		make INSROOT=/usr/mgr installman
+	installs all of the man pages
+
+=> To make a color version of mgr (after the mono version has been made)
+		cd src; make clean clobber; make colormgr FLAG=-O INSROOT=/usr/mgr
+	and copy the resultant mgr binary to $INSROOT/bin as color_mgr.
+
+=> Make sure to run set_colormap before starting color_mgr
+
+=> The $HOME MOVIE stuff is in demo/movie.  Look in demo/movie/demo for a
+	sample movie.

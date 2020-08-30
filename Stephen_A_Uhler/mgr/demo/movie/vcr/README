@@ -1,0 +1,8 @@
+This is the obligitory README file
+vcr - MGR based user interface to $HOME Movie
+
+README		This file
+Makefile		---
+buttons		button icons used by movie
+vcr.1			man page
+vcr.c			source

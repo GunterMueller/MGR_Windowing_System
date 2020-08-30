@@ -1,0 +1,31 @@
+#!/bin/sh
+#	script for generating MTX credits
+foo=/tmp/foo
+ROLL=../croll
+SAVE=-z
+SAVE=
+rm -f $foo
+
+$ROLL -s2 -E 200 -w 5 $SAVE >> $foo << XXX
+b-28	c		0		THE END
+XXX
+$ROLL -s3 -t 250 -b 800  $SAVE >> $foo<< XXX
+b-20	c	0	Produced and Directed by
+r-22	c	0	Stephen Uhler
+b-20	c	150	Music by:
+r-20	c	0	PellScore
+b-20	c	100	Special assistance provided by:
+r-18	c	0	Mike Bianchi
+r-14	c	0	and
+r-18	c	0	Daniel Nachbar
+b-20	c	100	Window System Services provided by:
+r-20	c	0	MGR
+r-14	c	0	and the
+r-18	c	0	\$HOME MOVIE Video System.
+r-14	c	0	-Written by -
+r-18	c	0	Stephen Uhler
+r-18	c	100	Credits by Roll-A-Credit
+XXX
+$ROLL -s1 -t 300 -b 800 -E 100 -w 30 $SAVE  >> $foo << XXX
+r-12	c	0	A Stu-Labs Video Production
+XXX

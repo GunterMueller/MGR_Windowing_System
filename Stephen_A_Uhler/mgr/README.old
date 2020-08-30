@@ -1,0 +1,138 @@
+#                        Copyright (c) 1987 Bellcore
+#                            All Rights Reserved
+#       Permission is granted to copy or use this program, EXCEPT that it
+#       may not be sold for profit, the copyright notice must be reproduced
+#       on copies, and credit should be given to Bellcore where it is due.
+#       BELLCORE MAKES NO WARRANTY AND ACCEPTS NO LIABILITY FOR THIS PROGRAM.
+
+----------------------------------------------------------------------------
+
+Welcome to MGR.   MGR is an network transparent window system for Unix.  This
+source contains the SUN version.  MGR has been ported to the Macintosh, and to
+system V based unix machines. Look at the first few pages of
+doc/usrman/usrman.out for a more detailed desciption of MGR.
+
+----------------------------------------------------------------------------
+
+Directory contents:
+
+Makefile	Master makefile
+README		This file
+demo		Mgr demo programs
+doc		man pages and user's quide
+font		32-bit aligned fonts
+icon		some sample icons
+lib		C library interface
+menu		some sample menus
+misc		Sample startup files, misc. useful commands.
+src		MGR source
+----------------------------------------------------------------------------
+
+Installation notes:
+
+*  MGR has 2 built-in path names; one to find fonts, the other to find icons.
+   Both are set with INSROOT in the top level makefile, but may be
+   over-ridden on the command line.
+
+*  "make" builds mgr and all the demos and utilities. "make install", when
+   run as root, put everything into the proper place.
+
+*  MGR needs to run as root in order to "chown" your tty's.  Otherwise
+   commands like "mesg" and "biff" don't work -- they require you own
+   your tty, and the mgr ipc stuff breaks.
+
+*  Some old versions of make (pre release 3.0) don't work on multi-level
+   makefiles.  In such cases, run all of the sub makefiles by hand, 
+   starting at the bottom.  Alternately you can use GNU-make from the
+   Free Software Foundation (You need to remove the "#include <sys/types.h>"
+   and move "#include <sys/param.h>" to be the 1'st include file) if gnu-make
+   won't compile.
+
+*  I've installed this release on the following SUNS:
+      sun 2/120 running release 1.1
+      sun 2/50 running release 2.3
+      sun  3/50 3/75, 3/160, 3/260, 3/110, 3/60c running releases 3.0 to 4.0.
+      This release used to work on the roadrunner (386 based SUN), but the
+      C compiler dumps core on our current RR release.  Also on the 386, the
+		internal format of bitmaps is different: you need to bit-swap every
+		data byte of the fonts and icons.
+
+*  To make and install MGR, become root and type:
+      make INSROOT=<rootdir> TARGET=<which_mgr> install
+   where <rootdir> is MGR's root directory, usually /usr/mgr and
+   <which_mgr> specifies the version of mgr you want.  Common values for
+   <which_mgr> are:
+      prod		production version - debugging code omitted.
+      color		color version
+      sun2		sun2 version
+      mgr	 	default version
+   src/makefile has a complete list of $TARGET's
+   Some of the demos don't work in color.
+
+*  To make MGR's home directory in one place, then install it in a different
+   place (presumably in anticipation of future symbolic links), do a
+      make INSROOT=<mgr_looks_here>
+   followed by a
+      make INSROOT=<mgr_gets_put_here> install
+   
+*  Makefile Bugs
+   When making the 'color' or other pixrect based versions of mgr (Normally
+   MGR doesn't use pixrect; it has its own bitblit code) you need to add
+	OTHERLIB=-lpixrect to the make command line.
+
+*  MGR bugs.
+   - The font format depends upon the underlying bitblit implementation,
+     which is why 2 versions of the fonts are needed.  This should be fixed
+     in the future, with the introduction of a more portable font format.
+     Its currently not possible for the monochrome and color versions of
+     MGR to share the same directory, as they each need a different font
+     format.
+
+   - The SUN color version of MGR is kludgy, due in part to the semantics
+     of Sun's pixrect library.  If I ever get around to writing COLOR bitblit
+     code, the color versions should go 2x faster.
+
+----------------------------------------------------------------------------
+
+*  When trying to run MGR, if you get:
+   
+   - can't find the screen
+     make sure you have a /dev/bwtwo0, otherwise
+     cd to /dev, and type "MAKEDEV bwtwo0" as root
+
+   - can't get a ptty
+     make sure all of /dev/[tp]ty[pq]? are owned by root, mode 666
+     and all programs referenced with the "shell" option in the startup
+     file exist and are executable
+
+   - none but the default font, make sure MGR is looking in the right place.
+     type "mgr -V" to find out where mgr is looking.
+
+   - completely hung (not even the mouse track moves)
+     login to your sun from another terminal (or rlogin) and kill the
+     mgr process.
+
+  "mgr -V" provides more configuration information than "mgr -v"
+
+----------------------------------------------------------------------------
+Acknowlegements:
+   Many thanks to Mike Bianchi, who spent many hours fixing little bugs
+   and helping to get all of this stuff into a coherent package.
+
+----------------------------------------------------------------------------
+
+Stephen A. Uhler
+Bell Communications Research
+435 South St.
+Morristown, NJ 07960
+July, 7 1988 10, 1987
+
+Email addresses:
+  bellcore!sau 
+  sau@bellcore.com
+
+----------------------------------------------------------------------------
+
+Please mail any bugs or comments to:
+mgr@bellcore.com or bellcore!mgr
+

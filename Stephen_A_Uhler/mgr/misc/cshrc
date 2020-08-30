@@ -1,0 +1,8 @@
+#	Sample .cshrc file (for MGR) - sau
+
+set history=40 ignoreeof
+set path=($HOME/bin /usr/{mgr,local}/bin /usr/ucb /usr/{,5}bin /etc /usr/etc .)
+set cdpath=(. $HOME)
+alias ls ls -F
+set tty=`tty | sed 's/^.*tty//'`
+set prompt="`hostname`-$tty% "
